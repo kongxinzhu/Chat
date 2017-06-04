@@ -2,10 +2,6 @@ package com.marceme.marcefirebasechat.model;
 
 import com.google.firebase.database.Exclude;
 
-/**
- * @author Marcelino Yax-marce7j@gmail.com-Android Developer
- *         Created on 12/23/2016.
- */
 
 public class User {
 
