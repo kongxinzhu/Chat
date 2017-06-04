@@ -22,6 +22,7 @@ import com.marceme.marcefirebasechat.R;
 import com.marceme.marcefirebasechat.adapter.UsersChatAdapter;
 import com.marceme.marcefirebasechat.login.LogInActivity;
 import com.marceme.marcefirebasechat.model.User;
+import com.marceme.marcefirebasechat.profile.MyProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,7 @@ public class MainActivity extends Activity {
     private void setUsersDatabase() {
         mUserRefDatabase = FirebaseDatabase.getInstance().getReference().child("users");
     }
+
     private void setUserRecyclerView() {
         mUsersChatAdapter = new UsersChatAdapter(this, new ArrayList<User>());
         mUsersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -121,6 +123,12 @@ public class MainActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // LoginActivity is a New Task
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK); // The old task when coming back to this activity should be cleared so we cannot come back to it.
         startActivity(intent);
+    }
+
+
+    private void goToMyProfile() {
+        Intent profile = new Intent(this, MyProfileActivity.class);
+        startActivity(profile);
     }
 
     @Override
@@ -177,6 +185,10 @@ public class MainActivity extends Activity {
             logout();
             return true;
         }
+        if(item.getItemId()==R.id.action_my_profile){
+            goToMyProfile();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -203,7 +215,7 @@ public class MainActivity extends Activity {
                     if(dataSnapshot.getKey().equals(mCurrentUserUid)){
                         User currentUser = dataSnapshot.getValue(User.class);
                         mUsersChatAdapter.setCurrentUserInfo(userUid, currentUser.getEmail(), currentUser.getCreatedAt());
-                    }else {
+                    } else {
                         User recipient = dataSnapshot.getValue(User.class);
                         recipient.setRecipientId(userUid);
                         mUsersKeyList.add(userUid);

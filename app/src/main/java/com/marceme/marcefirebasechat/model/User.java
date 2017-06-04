@@ -1,7 +1,6 @@
 package com.marceme.marcefirebasechat.model;
 
 import com.google.firebase.database.Exclude;
-import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
  * @author Marcelino Yax-marce7j@gmail.com-Android Developer
@@ -13,6 +12,7 @@ public class User {
     private String displayName;
     private String email;
     private String connection;
+    private String mystatus;
     private int avatarId;
     private long createdAt;
 
@@ -48,6 +48,15 @@ public class User {
     private String cleanEmailAddress(String email){
         //replace dot with comma since firebase does not allow dot
         return email.replace(".","-");
+    }
+
+    private String getMystatus() {
+        return mystatus;
+    }
+
+
+    public void setMystatus(String mystatus) {
+        this.mystatus = mystatus;
     }
 
     private String getUserEmail() {

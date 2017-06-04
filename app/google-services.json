@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "536459750336",
+    "firebase_url": "https://chatedmt.firebaseio.com",
+    "project_id": "chatedmt",
+    "storage_bucket": "chatedmt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536459750336:android:9f731b30a3f6c525",
+        "android_client_info": {
+          "package_name": "dev.edmt.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536459750336-e3iusgh6iokn9ogcsrd5ddhv1rct9b00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCidUzRbS1K1SLS22ICzVFCnk32DZNPSK8"
+        },
+        {
+          "current_key": "AIzaSyD2jqUEHbBP1gJ99oG5xlLO5A-kLNK-DLU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536459750336:android:2cc70cb4e5486f77",
+        "android_client_info": {
+          "package_name": "com.marceme.marcefirebasechat.adapter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536459750336-e3iusgh6iokn9ogcsrd5ddhv1rct9b00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCidUzRbS1K1SLS22ICzVFCnk32DZNPSK8"
+        },
+        {
+          "current_key": "AIzaSyD2jqUEHbBP1gJ99oG5xlLO5A-kLNK-DLU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536459750336:android:bce33f84b385e35e",
+        "android_client_info": {
+          "package_name": "com.marceme.marcefirebasechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536459750336-e3iusgh6iokn9ogcsrd5ddhv1rct9b00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCidUzRbS1K1SLS22ICzVFCnk32DZNPSK8"
+        },
+        {
+          "current_key": "AIzaSyD2jqUEHbBP1gJ99oG5xlLO5A-kLNK-DLU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@color/primary"
+tools:context="com.marceme.marcefirebasechat.profile.MyProfileActivity">
+
+<!-- For the purpose of the app, many attributes are not refactored-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="30sp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.40"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/headshot_7"/>
+
+        <TextView
+            android:id="@+id/titleProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="My Profile"
+            android:textColor="@color/text_color"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Display Name"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"/>
+        <EditText
+            android:id="@+id/profile_displayname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="@dimen/log_in_margin"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
+            android:hint="  type your display name" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My status"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"/>
+        <EditText
+            android:id="@+id/profile_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="@dimen/log_in_margin"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
+            android:hint="  ..this is a good guy"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_profile_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:background="@color/text_color"
+        android:layout_marginLeft="@dimen/log_in_margin"
+        android:textColor="@color/primary"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/log_in_margin"/>
+
+    <Button
+        android:id="@+id/btn_profile_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textColor="@color/primary"
+        android:background="@color/text_color"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="@dimen/log_in_margin"
+        android:layout_marginRight="@dimen/log_in_margin"/>
+
+
+</LinearLayout>

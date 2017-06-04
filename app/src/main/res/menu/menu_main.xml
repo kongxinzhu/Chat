@@ -6,4 +6,8 @@
             android:title="Logout"
             android:orderInCategory="100"
             android:showAsAction="never"/>
+      <item android:id="@+id/action_my_profile"
+          android:title="MyProfile"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
 </menu>

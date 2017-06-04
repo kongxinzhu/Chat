@@ -120,7 +120,6 @@ public class RegisterActivity extends Activity{
         return mUserPassWordRegister.getText().toString().trim();
     }
 
-
     private void signUp(String email, String password) {
 
         showAlertDialog("Registering...",true);
