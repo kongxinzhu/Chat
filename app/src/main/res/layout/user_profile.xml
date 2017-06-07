@@ -20,10 +20,24 @@
         android:layout_height="wrap_content"
         tools:text="Marcelino"
         android:textStyle="bold"
+        android:textSize="20dp"
         android:textColor="@color/text_color_icon"
         android:layout_alignBottom="@+id/img_avatar"
         android:layout_toEndOf="@+id/img_avatar"
-        android:layout_marginBottom="26dp"/>
+        android:layout_marginBottom="29dp"/>
+
+    <TextView
+        android:id="@+id/text_view_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/common_google_signin_btn_text_light"
+        android:textStyle="bold"
+        android:textSize="12dp"
+        android:paddingLeft="4dp"
+        tools:text="Status"
+        android:layout_alignBottom="@+id/img_avatar"
+        android:layout_toEndOf="@+id/img_avatar"
+        android:layout_marginBottom="5dp"/>
 
     <TextView
         android:id="@+id/text_view_connection_status"

@@ -39,6 +39,7 @@ public class RegisterActivity extends Activity{
     private DatabaseReference mDatabase;
     private AlertDialog dialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +113,11 @@ public class RegisterActivity extends Activity{
         return mUserFirstNameRegister.getText().toString().trim();
     }
 
+    private String getUserPhotoURL() {
+        return "http://www.rd.com/wp-content/uploads/sites/2/2016/02/06-train-cat-shake-hands.jpg";
+    }
+
+
     private String getUserEmail() {
         return mUserEmailRegister.getText().toString().trim();
     }
@@ -163,6 +169,7 @@ public class RegisterActivity extends Activity{
         return new User(
                 getUserDisplayName(),
                 getUserEmail(),
+                getUserPhotoURL(),
                 UsersChatAdapter.ONLINE,
                 ChatHelper.generateRandomAvatarForUser(),
                 new Date().getTime()
