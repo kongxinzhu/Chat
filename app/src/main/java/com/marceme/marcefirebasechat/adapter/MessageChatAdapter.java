@@ -11,9 +11,6 @@ import com.marceme.marcefirebasechat.model.ChatMessage;
 
 import java.util.List;
 
-/**
- * Created by Marcel on 11/7/2015.
- */
 public class MessageChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<ChatMessage> mChatList;
