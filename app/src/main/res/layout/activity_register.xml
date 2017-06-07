@@ -17,7 +17,14 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/text_color"
-        android:layout_marginTop="@dimen/log_in_margin"/>
+        android:layout_margin="10dp"/>
+
+    <ImageButton
+        android:id="@+id/image_button_photo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/image"
+        android:background="@color/primary"/>
 
     <EditText
         android:id="@+id/edit_text_display_name"
