@@ -23,9 +23,9 @@ tools:context="com.marceme.marcefirebasechat.profile.MyProfileActivity">
                 android:id="@+id/profile_image"
                 android:layout_width="wrap_content"
                 android:layout_height="110dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="30dp"
-                android:src="@drawable/headshot_7"/>
+                android:layout_marginTop="10dp"
+                android:src="@drawable/headshot_7" />
 
             <Button
                 android:id="@+id/bt_edit_photo"
@@ -43,14 +43,13 @@ tools:context="com.marceme.marcefirebasechat.profile.MyProfileActivity">
         </LinearLayout>
 
 
-
         <TextView
             android:id="@+id/titleProfile"
             android:layout_width="wrap_content"
             android:layout_height="49dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:text="My Profile"
             android:textColor="@color/text_color"
             android:textSize="30sp"
