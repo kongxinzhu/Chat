@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -34,9 +33,9 @@ import com.marceme.marcefirebasechat.R;
 import com.marceme.marcefirebasechat.adapter.MessageChatAdapter;
 import com.marceme.marcefirebasechat.model.ChatMessage;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -178,8 +177,6 @@ public class ChatActivity extends Activity {
             senderImageURL = mDownloadUrl.toString();
         }
 
-        Log.e("new message's text :", senderMessage);
-        Log.e("new message's url :", senderImageURL);
         if(!senderMessage.isEmpty() || !senderImageURL.isEmpty()){
 
             ChatMessage newMessage = new ChatMessage(senderMessage,senderImageURL,mCurrentUserId,mRecipientId);
@@ -360,8 +357,14 @@ public class ChatActivity extends Activity {
                         Log.d(TAG, "uploadFromUri:onSuccess");
 
                         // Get the public download URL
-                        mDownloadUrl = taskSnapshot.getDownloadUrl();
-//                        mUserNewPhotoURL = mDownloadUrl.toString();
+                        Uri uri = taskSnapshot.getDownloadUrl();
+                        String messagePhotoURL = uri.toString();
+
+                        ChatMessage newMessage = new ChatMessage(new String(), messagePhotoURL,
+                                mCurrentUserId, mRecipientId);
+                        messageChatDatabase.push().setValue(newMessage);
+                        mUserMessageChatText.setText("");
+
 //                        Picasso.with(ChatActivity.this).load(mUserNewPhotoURL).into(mUserPhoto);
                         // [START_EXCLUDE]
                         hideProgressDialog();
