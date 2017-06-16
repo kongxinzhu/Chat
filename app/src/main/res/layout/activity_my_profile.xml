@@ -25,6 +25,7 @@ tools:context="com.marceme.marcefirebasechat.profile.MyProfileActivity">
                 android:layout_height="140dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:onClick="editUpload"
                 android:src="@drawable/headshot_7"/>
 
             <Button

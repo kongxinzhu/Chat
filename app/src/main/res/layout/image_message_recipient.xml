@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/RowStyle"
+    android:id="@+id/chat_sdk_root_view_image_friend">
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_user_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        tools:src="@drawable/ic_profile"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_time"
+        android:text="Time"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="3dp"
+        android:gravity="center_horizontal"
+        style="@style/MessageDateStyle"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/chat_image"
+        android:adjustViewBounds="true"
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/img_user_image" />
+
+</RelativeLayout>
