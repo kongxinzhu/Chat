@@ -14,13 +14,12 @@ public class ChatMessage {
     public ChatMessage() {
     }
 
-    public ChatMessage(String message, String sender, String recipient, String imageURL) {
+    public ChatMessage(String message, String imageURL, String sender, String recipient) {
         this.message = message;
+        this.imageURL = imageURL;
         this.recipient = recipient;
         this.sender = sender;
-        this.imageURL = imageURL;
     }
-
 
     public void setRecipientOrSenderStatus(int recipientOrSenderStatus) {
         this.mRecipientOrSenderStatus = recipientOrSenderStatus;

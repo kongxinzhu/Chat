@@ -9,16 +9,15 @@
 
     <!-- For the purpose of the app, many attributes are not refactored-->
 
-    <TextView
-        android:id="@+id/titleChat"
-        android:layout_width="wrap_content"
+
+    <ImageView
+        android:id="@+id/image_button_photo"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:text="M Chat"
-        android:textStyle="bold"
-        android:textColor="@color/text_color"
-        android:layout_gravity="center"
-        android:textSize="30sp"
-        android:layout_marginTop="@dimen/log_in_margin"/>
+        android:background="@color/primary"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo_1"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/edit_text_email_login"

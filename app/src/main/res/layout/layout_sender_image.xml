@@ -15,25 +15,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/text_view_sender_message"
+            <ImageView
+                android:id="@+id/image_view_sender_message_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="I am doing ok"
+
                 android:padding="8dp"
                 android:layout_marginLeft="60dp"
-                android:layout_marginRight="10dp"
+
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="2dp"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/primary_dark"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
                 android:background="@drawable/sender_rounded_corners"
-                android:layout_gravity="right"
                 />
+
         </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
