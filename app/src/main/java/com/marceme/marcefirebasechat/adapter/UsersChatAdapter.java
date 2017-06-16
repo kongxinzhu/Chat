@@ -2,11 +2,7 @@ package com.marceme.marcefirebasechat.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +16,6 @@ import com.marceme.marcefirebasechat.model.User;
 import com.marceme.marcefirebasechat.ui.ChatActivity;
 import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 
 /**
@@ -45,7 +38,8 @@ public class UsersChatAdapter extends RecyclerView.Adapter<UsersChatAdapter.View
 
     @Override
     public ViewHolderUsers onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolderUsers(mContext,LayoutInflater.from(parent.getContext()).inflate(R.layout.user_profile, parent, false));
+        return new ViewHolderUsers(mContext,
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.user_profile, parent, false));
     }
 
     @Override
@@ -54,19 +48,8 @@ public class UsersChatAdapter extends RecyclerView.Adapter<UsersChatAdapter.View
         User fireChatUser = mUsers.get(position);
 
         // Set avatar
-//        int userAvatarId= ChatHelper.getDrawableAvatarId(fireChatUser.getAvatarId());
-//        Drawable  avatarDrawable = ContextCompat.getDrawable(mContext,userAvatarId);
-//        holder.getUserAvatar().setImageDrawable(avatarDrawable);
-
-//        avatarDrawable = loadImageFromWeb("https://www.pexels.com/photo/animal-dog-pet-focus-7720/");
-//        avatarDrawable = drawableFromUrl("https://www.pexels.com/photo/animal-dog-pet-focus-7720/");
-//        holder.getUserAvatar().setImageDrawable(avatarDrawable);
-
-
         String url = fireChatUser.getPhotoURL();
         Picasso.with(mContext).load(url).into(holder.getUserAvatar());
-
-
 
         // Set display name
         holder.getUserDisplayName().setText(fireChatUser.getDisplayName());
@@ -166,40 +149,9 @@ public class UsersChatAdapter extends RecyclerView.Adapter<UsersChatAdapter.View
 
             // Start new activity
             mContextViewHolder.startActivity(chatIntent);
-
-        }
-    }
-
-    private Drawable loadImageFromWeb(String url){
-//        Log.i(TAG, "Fetching image");
-        try{
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, "src");
-//            Log.i(TAG, "Created image from stream");
-            return d;
-        }catch (Exception e) {
-            //TODO handle error
-//            Log.i(TAG, "Error fetching image");
-            System.out.println("Exc="+e);
-            return null;
         }
     }
 
 
-
-    public static Drawable drawableFromUrl(String url) {
-        try {
-            Bitmap x;
-            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-            connection.connect();
-            InputStream input = connection.getInputStream();
-
-            x = BitmapFactory.decodeStream(input);
-            return new BitmapDrawable(x);
-        } catch (Exception e) {
-            System.out.println("Exc="+e);
-            return null;
-        }
-    }
 
 }

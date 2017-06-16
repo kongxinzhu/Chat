@@ -11,33 +11,26 @@ public class User {
     private String mystatus;
     private String photoURL;
     private String defaultPhotoURL = "http://www.rd.com/wp-content/uploads/sites/2/2016/02/06-train-cat-shake-hands.jpg";
-    private int avatarId;
     private long createdAt;
 
+//    private LinkedList<String> friends;
 
     private String mRecipientId;
 
     public User() {
     }
 
-    public User(String displayName, String email, String photoURL, String connection, int avatarId, long createdAt) {
+
+    public User(String displayName, String email, String photoURL, String connection, long createdAt) {
 
 
         this.displayName = displayName;
         this.email = email;
         this.photoURL = photoURL == null ? defaultPhotoURL : photoURL;
         this.connection = connection;
-        this.avatarId = avatarId;
         this.createdAt = createdAt;
     }
 
-//    public User(String displayName, String email, String connection, int avatarId, long createdAt) {
-//        this.displayName = displayName;
-//        this.email = email;
-//        this.connection = connection;
-//        this.avatarId = avatarId;
-//        this.createdAt = createdAt;
-//    }
 
 
     public String createUniqueChatRef(long createdAtCurrentUser, String currentUserEmail){
@@ -92,10 +85,6 @@ public class User {
 
     public String getConnection() {
         return connection;
-    }
-
-    public int getAvatarId() {
-        return avatarId;
     }
 
     @Exclude

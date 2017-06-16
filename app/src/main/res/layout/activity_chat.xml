@@ -40,8 +40,19 @@
             android:textSize="14sp"
             android:hint="Type your message"
             android:gravity="top"
-            android:layout_toStartOf="@+id/btn_send_message"
+            android:layout_toStartOf="@+id/btn_camera"
             />
+
+        <ImageButton
+            android:id="@+id/btn_camera"
+            android:layout_width="72dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/btn_send_message"
+            android:src="@android:drawable/ic_menu_camera"
+            android:onClick="editUpload"
+            />
+
         <Button
             android:id="@+id/btn_send_message"
             android:layout_marginRight="10dp"

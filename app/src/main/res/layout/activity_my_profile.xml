@@ -15,17 +15,17 @@ tools:context="com.marceme.marcefirebasechat.profile.MyProfileActivity">
         android:weightSum="1">
 
         <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="150dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:orientation="vertical">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/headshot_7" />
+                android:src="@drawable/headshot_7"/>
 
             <Button
                 android:id="@+id/bt_edit_photo"
@@ -137,6 +137,5 @@ tools:context="com.marceme.marcefirebasechat.profile.MyProfileActivity">
         android:layout_marginTop="8dp"
         android:layout_marginLeft="@dimen/log_in_margin"
         android:layout_marginRight="@dimen/log_in_margin"/>
-
 
 </LinearLayout>
