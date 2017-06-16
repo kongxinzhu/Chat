@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.marceme.marcefirebasechat.R;
 import com.marceme.marcefirebasechat.adapter.UsersChatAdapter;
+import com.marceme.marcefirebasechat.blogpost.BlogPostActivity;
 import com.marceme.marcefirebasechat.login.LogInActivity;
 import com.marceme.marcefirebasechat.model.User;
 import com.marceme.marcefirebasechat.profile.MyProfileActivity;
@@ -131,6 +132,11 @@ public class MainActivity extends Activity {
         startActivity(profile);
     }
 
+    private void goToBlogPost() {
+        Intent blogPost = new Intent(this, BlogPostActivity.class);
+        startActivity(blogPost);
+    }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -187,6 +193,10 @@ public class MainActivity extends Activity {
         }
         if(item.getItemId()==R.id.action_my_profile){
             goToMyProfile();
+            return true;
+        }
+        if(item.getItemId()==R.id.action_blogPost){
+            goToBlogPost();
             return true;
         }
 
