@@ -8,23 +8,16 @@
 
     <!-- For the purpose of the app, many attributes are not refactored-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="M Chat"
-        android:id="@+id/titleChat"
-        android:layout_gravity="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/text_color"
-        android:layout_margin="10dp"/>
+
 
     <ImageButton
         android:id="@+id/image_button_photo"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/image"
-        android:background="@color/primary"/>
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo_2"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/edit_text_display_name"
