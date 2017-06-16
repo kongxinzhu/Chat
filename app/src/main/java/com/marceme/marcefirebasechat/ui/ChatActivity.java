@@ -114,9 +114,19 @@ public class ChatActivity extends Activity {
                 if(dataSnapshot.exists()){
                     ChatMessage newMessage = dataSnapshot.getValue(ChatMessage.class);
                     if(newMessage.getSender().equals(mCurrentUserId)){
-                        newMessage.setRecipientOrSenderStatus(MessageChatAdapter.SENDER);
-                    }else{
-                        newMessage.setRecipientOrSenderStatus(MessageChatAdapter.RECIPIENT);
+                        if (newMessage.getImageURL().isEmpty()) {
+                            newMessage.setRecipientOrSenderStatus(MessageChatAdapter.SENDER_TEXT);
+                        } else if(newMessage.getMessage().isEmpty()){
+                            newMessage.setRecipientOrSenderStatus(MessageChatAdapter.SENDER_IMAGE);
+                        } else {
+                            newMessage.setRecipientOrSenderStatus(MessageChatAdapter.SENDER_BOTH);
+                        }
+                    } else if(newMessage.getImageURL().isEmpty()) {
+                        newMessage.setRecipientOrSenderStatus(MessageChatAdapter.RECIPIENT_TEXT);
+                    } else if(newMessage.getMessage().isEmpty()){
+                        newMessage.setRecipientOrSenderStatus(MessageChatAdapter.RECIPIENT_IMAGE);
+                    } else {
+                        newMessage.setRecipientOrSenderStatus(MessageChatAdapter.RECIPIENT_BOTH);
                     }
                     messageChatAdapter.refillAdapter(newMessage);
                     mChatRecyclerView.scrollToPosition(messageChatAdapter.getItemCount()-1);
@@ -161,17 +171,21 @@ public class ChatActivity extends Activity {
 
     @OnClick(R.id.btn_send_message)
     public void btnSendMsgListener(View sendButton){
+        String message = mUserMessageChatText.getText().toString().trim();
+        String senderMessage = message == null ? new String() : message;
+        String senderImageURL = new String();
+        if(mDownloadUrl != null) {
+            senderImageURL = mDownloadUrl.toString();
+        }
 
-        String senderMessage = mUserMessageChatText.getText().toString().trim();
-        String senderImageURL = mDownloadUrl.toString();
-
+        Log.e("new message's text :", senderMessage);
+        Log.e("new message's url :", senderImageURL);
         if(!senderMessage.isEmpty() || !senderImageURL.isEmpty()){
 
-            ChatMessage newMessage = new ChatMessage(senderMessage,mCurrentUserId,mRecipientId,senderImageURL);
+            ChatMessage newMessage = new ChatMessage(senderMessage,senderImageURL,mCurrentUserId,mRecipientId);
             messageChatDatabase.push().setValue(newMessage);
             mUserMessageChatText.setText("");
         }
-
     }
 
 
@@ -243,7 +257,6 @@ public class ChatActivity extends Activity {
 
         // Create and launch the intent
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        Intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Uploading your picture");
         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mFileUri);
 
         startActivityForResult(takePictureIntent, RC_TAKE_PICTURE);
