@@ -2,6 +2,7 @@ package com.marceme.marcefirebasechat.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,21 +88,25 @@ public class MessageChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
 
         // set image in message
-        viewHolderSender.getSenderMessageImageView().getViewTreeObserver()
-                .addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                                               @Override
-                                               public void onGlobalLayout() {
-                                                   viewHolderSender.getSenderMessageImageView().getViewTreeObserver()
-                                                           .removeOnGlobalLayoutListener(this);
-
-                                                   Picasso.with(mContext)
-                                                           .load(senderFireMessage.getImageURL())
-                                                           .resize(viewHolderSender.getSenderMessageImageView().getWidth(), 0)
-                                                           .into(viewHolderSender.getSenderMessageImageView());
-                                               }
-                                           }
-                );
-
+        String imageURL = senderFireMessage.getImageURL();
+        if(imageURL != null && !imageURL.isEmpty()) {
+            Picasso.with(mContext).load(senderFireMessage.getImageURL()).into(viewHolderSender.getSenderMessageImageView());
+//            Log.e("imageURL sender", "is not empty");
+//            viewHolderSender.getSenderMessageImageView().getViewTreeObserver()
+//                    .addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//                                                   @Override
+//                                                   public void onGlobalLayout() {
+//                                                       viewHolderSender.getSenderMessageImageView().getViewTreeObserver()
+//                                                               .removeOnGlobalLayoutListener(this);
+//
+//                                                       Picasso.with(mContext)
+//                                                               .load(senderFireMessage.getImageURL())
+//                                                               .resize(viewHolderSender.getSenderMessageImageView().getWidth(), 0)
+//                                                               .into(viewHolderSender.getSenderMessageImageView());
+//                                                   }
+//                                               }
+//                    );
+        }
 
 //        Picasso.with(mContext).load(senderFireMessage.getImageURL()).resize(0, viewHolderSender.getSenderMessageImageView().getHeight()).into(viewHolderSender.getSenderMessageImageView());
 //        Log.e("image message URL", senderFireMessage.getImageURL());
@@ -132,20 +137,23 @@ public class MessageChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         viewHolderRecipient.getRecipientMessageTextView().setText(recipientFireMessage.getMessage());
 
         // set image in message
-        viewHolderRecipient.getmRecipientImageImageView().getViewTreeObserver()
-                .addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                    @Override
-                    public void onGlobalLayout() {
-                        viewHolderRecipient.getmRecipientMessageImageView().getViewTreeObserver()
-                                .removeOnGlobalLayoutListener(this);
+        String imageURL = recipientFireMessage.getImageURL();
+        if(imageURL != null && !imageURL.isEmpty()) {
+            Log.e("imageURL recipient", "is not empty");
+            viewHolderRecipient.getmRecipientImageImageView().getViewTreeObserver()
+                    .addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                        @Override
+                        public void onGlobalLayout() {
+                            viewHolderRecipient.getmRecipientMessageImageView().getViewTreeObserver()
+                                    .removeOnGlobalLayoutListener(this);
 
-                        Picasso.with(mContext)
-                                .load(recipientFireMessage.getImageURL())
-                                .resize(viewHolderRecipient.getmRecipientMessageImageView().getWidth(), 0)
-                                .into(viewHolderRecipient.getmRecipientMessageImageView());
-                    }
-                });
-
+                            Picasso.with(mContext)
+                                    .load(recipientFireMessage.getImageURL())
+                                    .resize(viewHolderRecipient.getmRecipientMessageImageView().getWidth(), 0)
+                                    .into(viewHolderRecipient.getmRecipientMessageImageView());
+                        }
+                    });
+        }
 
         // set recipient photo
         DatabaseReference mUserRefDatabase = FirebaseDatabase.getInstance()
