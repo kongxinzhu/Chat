@@ -42,13 +42,6 @@
         android:layout_alignBottom="@+id/txt_content"
         android:layout_alignParentEnd="true" />
 
-    <ImageView
-        android:layout_width="240dp"
-        android:layout_height="200dp"
-        android:id="@+id/chat_image"
-        android:adjustViewBounds="true"
-        android:visibility="visible"
-        android:layout_below="@+id/txt_content" />
 
     <TextView
         android:id="@+id/txt_content"

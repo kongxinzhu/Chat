@@ -97,7 +97,7 @@ public class BlogPostActivity extends Activity {
         previousMessages.setLayoutManager(new LinearLayoutManager(this));
         previousMessages.setHasFixedSize(true);
         previousMessages.setAdapter(messageListAdapter);
-        messageChatDatabaseRef = FirebaseDatabase.getInstance().getReference("BlogPost");
+        messageChatDatabaseRef = FirebaseDatabase.getInstance().getReference("BlogPosts");
 
 
         messageChatListener = messageChatDatabaseRef.limitToFirst(20).addChildEventListener(new ChildEventListener() {
@@ -129,7 +129,19 @@ public class BlogPostActivity extends Activity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
+//                if(dataSnapshot.exists()) {
+//                    String userUid = dataSnapshot.getKey();
+//                    if(!userUid.equals(senderId)) {
+//
+//                        BlogMessage blogpost = dataSnapshot.getValue(BlogMessage.class);
+//
+//                        int index = mUsersKeyList.indexOf(userUid);
+//                        if(index > -1) {
+//                            mUsersChatAdapter.changeUser(index, user);
+//                        }
+//                    }
+//
+//                }
             }
 
             @Override
