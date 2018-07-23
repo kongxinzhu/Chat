@@ -15,9 +15,9 @@ public class BlogMessage {
     //private String recipient;
 
 //    private int mRecipientOrSenderStatus;
+
     public BlogMessage() {
     }
-
 
     public BlogMessage(String sender, String description, String photoURL, String imageURL) {
         this.sender = sender;
@@ -27,9 +27,9 @@ public class BlogMessage {
     }
 
 
-//   public void setRecipientOrSenderStatus(int recipientOrSenderStatus) {
-//      this.mRecipientOrSenderStatus = recipientOrSenderStatus;
-//   }
+//    public void setRecipientOrSenderStatus(int recipientOrSenderStatus) {
+//        this.mRecipientOrSenderStatus = recipientOrSenderStatus;
+//    }
 
     public String getDescription() {
         return description;

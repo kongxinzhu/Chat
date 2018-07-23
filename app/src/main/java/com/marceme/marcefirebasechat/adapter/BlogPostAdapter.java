@@ -95,8 +95,6 @@ public class BlogPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 ViewHolderRecipientImage viewHolderRecipientImage=(ViewHolderRecipientImage) viewHolder;
                 configureRecipientView(viewHolderRecipientImage,position, context);
                 break;
-
-
         }
     }
 
@@ -147,20 +145,13 @@ public class BlogPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     private void configureRecipientView(ViewHolderRecipientImage viewHolderRecipientImage, int position, Context context) {
-
-        //viewHolderRecipientImage.getRecipientMessageTextView().setText(recipientMessageText.getDescription());
-        CircleImageView iview = viewHolderRecipientImage.getmRecipientPhoto();
-
         BlogMessage recipientMessageImage= mChatList.get(position);
-        if( recipientMessageImage.getSender()  != null ) {
-            viewHolderRecipientImage.getRecipientImageTextSender().setText(recipientMessageImage.getSender());
-        }
-        if( recipientMessageImage.getDescription()  != null ) {
-            viewHolderRecipientImage.getRecipientImageTextView().setText(recipientMessageImage.getDescription());
-        }
+
         if (recipientMessageImage.getImageURL() != null) {
             Glide.with(context).load(recipientMessageImage.getImageURL()).into(viewHolderRecipientImage.mRecipientMessageImageView);
         }
+        CircleImageView iview = viewHolderRecipientImage.getmRecipientPhoto();
+
         if (recipientMessageImage.getPhotoURL() != null) {
             Glide.with(context).load(recipientMessageImage.getPhotoURL()).into(iview);
         } else {
@@ -246,13 +237,12 @@ public class BlogPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public ViewHolderRecipientText(View itemView) {
             super(itemView);
             mRecipientMessageTextView=(TextView)itemView.findViewById(R.id.txt_content);
-            mRecipientPhoto = (CircleImageView)itemView.findViewById(R.id.img_contact_image);
+            mRecipientPhoto = (CircleImageView) itemView.findViewById(R.id.img_contact_image);
         }
 
         public TextView getRecipientMessageTextView() {
             return mRecipientMessageTextView;
         }
-
 
         public CircleImageView getmRecipientPhoto() {
             return mRecipientPhoto;
@@ -262,36 +252,22 @@ public class BlogPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public class ViewHolderRecipientImage extends RecyclerView.ViewHolder {
 
-        private TextView mRecipientMessageTextView;
-        private TextView mRecipientMessageTextSender;
         private ImageView mRecipientMessageImageView;
         private CircleImageView mRecipientPhoto;
 
         public ViewHolderRecipientImage(View itemView) {
             super(itemView);
-            mRecipientMessageImageView = (ImageView)itemView.findViewById(R.id.imageBlog);
-            mRecipientPhoto = (CircleImageView) itemView.findViewById(R.id.img_user_image);
-            mRecipientMessageTextView = (TextView)itemView.findViewById(R.id.img_user_text);
-            mRecipientMessageTextSender = (TextView)itemView.findViewById(R.id.imageSender);
+            mRecipientMessageImageView=(ImageView)itemView.findViewById(R.id.chat_image);
+            mRecipientPhoto = (CircleImageView) itemView.findViewById(R.id.img_contact_image);
         }
 
-        public ImageView getmRecipientMessageImageView() {
+        public ImageView getRecipientMessageTextView() {
             return mRecipientMessageImageView;
         }
 
         public CircleImageView getmRecipientPhoto() {
             return mRecipientPhoto;
         }
-
-        public TextView getRecipientImageTextView() {
-            return mRecipientMessageTextView;
-        }
-
-        public TextView getRecipientImageTextSender() {
-            return mRecipientMessageTextSender;
-        }
-
-
 
     }
 }

@@ -12,11 +12,6 @@
         <item name="android:padding">2dp</item>
     </style>
 
-    <style name="TextNameStyle">
-        <item name="android:textSize">15dp</item>
-        <item name="android:padding">15dp</item>
-    </style>
-
 
     <style name="MessageDateStyle">
         <item name="android:textSize">13dp</item>
